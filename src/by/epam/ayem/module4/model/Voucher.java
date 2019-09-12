@@ -1,4 +1,4 @@
-package by.epam.ayem.module4;
+package by.epam.ayem.module4.model;
 
 /*5. Туристические путевки. Сформировать набор предложений клиенту по выбору туристической путевки
 различного типа (отдых, экскурсии, лечение, шоппинг, круиз и т.д.) для оптимального выбора. Учитывать
@@ -9,17 +9,30 @@ import java.util.List;
 
 public class Voucher {
 
+    private Client client;
     private VoucherType voucherType;
     private TransportType transport;
     private int daysAmount;
     private List<String> meals = new ArrayList<>();
 
+    public Voucher(String surname, int peopleAmount) {
+        this.client = new Client(surname, peopleAmount);
+    }
+
     @Override
     public String toString() {
-        return "Voucher type: " + voucherType +
+        return client + ". Voucher type: " + voucherType +
                 ". TransportType: " + transport +
                 ". Days amount: " + daysAmount +
-                ". MealsType: " + meals.toString()+ ".";
+                ". MealsType: " + meals.toString() + ".";
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public VoucherType getVoucherType() {

@@ -1,34 +1,33 @@
-package by.epam.ayem.module4;
+package by.epam.ayem.module4.Service;
 
 /*5. Туристические путевки. Сформировать набор предложений клиенту по выбору туристической путевки
 различного типа (отдых, экскурсии, лечение, шоппинг, круиз и т.д.) для оптимального выбора. Учитывать
 возможность выбора транспорта, питания и числа дней.*/
 
+import by.epam.ayem.module4.model.MealsType;
+import by.epam.ayem.module4.model.TransportType;
+import by.epam.ayem.module4.model.Voucher;
+import by.epam.ayem.module4.model.VoucherType;
+
 public class TravelAgencyService {
 
-    private Voucher voucher;
-
-    public TravelAgencyService(Voucher voucher) {
-        this.voucher = voucher;
-    }
-
-    public void chooseVoucherType(VoucherType voucherType) {
+    public void chooseVoucherType(Voucher voucher, VoucherType voucherType) {
         voucher.setVoucherType(voucherType);
     }
 
-    public void chooseTransport(TransportType transportType) {
+    public void chooseTransport(Voucher voucher, TransportType transportType) {
         voucher.setTransport(transportType);
     }
 
-    public void addMeals(MealsType mealsType) {
+    public void addMeals(Voucher voucher, MealsType mealsType) {
         voucher.getMeals().add(String.valueOf(mealsType));
     }
 
-    public void chooseAmountOfDays(int days) {
+    public void chooseAmountOfDays(Voucher voucher, int days) {
         voucher.setDaysAmount(days);
     }
 
-    public void printVoucher() {
-        System.out.println(voucher.toString());
+    public void printVoucher(Voucher voucher) {
+        System.out.println(voucher);
     }
 }
