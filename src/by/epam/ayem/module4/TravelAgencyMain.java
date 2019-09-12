@@ -4,7 +4,7 @@ package by.epam.ayem.module4;
 различного типа (отдых, экскурсии, лечение, шоппинг, круиз и т.д.) для оптимального выбора. Учитывать
 возможность выбора транспорта, питания и числа дней.*/
 
-import by.epam.ayem.module4.Service.TravelAgencyService;
+import by.epam.ayem.module4.service.TravelAgencyService;
 import by.epam.ayem.module4.model.MealsType;
 import by.epam.ayem.module4.model.TransportType;
 import by.epam.ayem.module4.model.Voucher;
