@@ -4,12 +4,17 @@ package by.epam.ayem.module4.service;
 различного типа (отдых, экскурсии, лечение, шоппинг, круиз и т.д.) для оптимального выбора. Учитывать
 возможность выбора транспорта, питания и числа дней.*/
 
-import by.epam.ayem.module4.model.MealsType;
-import by.epam.ayem.module4.model.TransportType;
-import by.epam.ayem.module4.model.Voucher;
-import by.epam.ayem.module4.model.VoucherType;
+import by.epam.ayem.module4.model.*;
 
 public class TravelAgencyService {
+
+    public Voucher createVoucherForClient(String surname, int peopleAmount) {
+        return new Voucher(surname, peopleAmount);
+    }
+
+    public void changeClientForVoucher(Voucher voucher, String surname, int peopleAmount) {
+        voucher.setClient(new Client(surname, peopleAmount));
+    }
 
     public void chooseVoucherType(Voucher voucher, VoucherType voucherType) {
         voucher.setVoucherType(voucherType);

@@ -19,14 +19,6 @@ public class Voucher {
         this.client = new Client(surname, peopleAmount);
     }
 
-    @Override
-    public String toString() {
-        return client + ". Voucher type: " + voucherType +
-                ". TransportType: " + transport +
-                ". Days amount: " + daysAmount +
-                ". MealsType: " + meals.toString() + ".";
-    }
-
     public Client getClient() {
         return client;
     }
@@ -65,5 +57,13 @@ public class Voucher {
 
     public void setDaysAmount(int daysAmount) {
         this.daysAmount = daysAmount;
+    }
+
+    @Override
+    public String toString() {
+        return client + ". Voucher type: " + voucherType +
+                ". Transport: " + transport +
+                ". Days amount: " + daysAmount +
+                ". " + meals.size() + " daily meals included: " + meals.toString() + ".";
     }
 }

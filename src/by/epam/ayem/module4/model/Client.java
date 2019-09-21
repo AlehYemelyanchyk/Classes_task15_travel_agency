@@ -1,7 +1,11 @@
 package by.epam.ayem.module4.model;
 
+/*5. Туристические путевки. Сформировать набор предложений клиенту по выбору туристической путевки
+различного типа (отдых, экскурсии, лечение, шоппинг, круиз и т.д.) для оптимального выбора. Учитывать
+возможность выбора транспорта, питания и числа дней.*/
+
 public class Client {
-    private String surname;
+    private final String surname;
     private int peopleAmount;
 
     public Client(String surname, int peopleAmount) {
@@ -9,17 +13,8 @@ public class Client {
         this.peopleAmount = peopleAmount;
     }
 
-    @Override
-    public String toString() {
-        return surname + ", " + peopleAmount;
-    }
-
     public String getSurname() {
         return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
     }
 
     public int getPeopleAmount() {
@@ -28,5 +23,10 @@ public class Client {
 
     public void setPeopleAmount(int peopleAmount) {
         this.peopleAmount = peopleAmount;
+    }
+
+    @Override
+    public String toString() {
+        return surname + ", " + peopleAmount;
     }
 }

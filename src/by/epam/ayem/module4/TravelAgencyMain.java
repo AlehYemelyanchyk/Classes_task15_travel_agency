@@ -5,17 +5,16 @@ package by.epam.ayem.module4;
 возможность выбора транспорта, питания и числа дней.*/
 
 import by.epam.ayem.module4.service.TravelAgencyService;
-import by.epam.ayem.module4.model.MealsType;
-import by.epam.ayem.module4.model.TransportType;
-import by.epam.ayem.module4.model.Voucher;
-import by.epam.ayem.module4.model.VoucherType;
+import by.epam.ayem.module4.model.*;
 
 public class TravelAgencyMain {
 
     public static void main(String[] args) {
         Voucher pietrovy = new Voucher("Pietrovy", 5);
         Voucher sidorovy = new Voucher("Sidorovy", 2);
+
         TravelAgencyService travelAgency = new TravelAgencyService();
+        travelAgency.changeClientForVoucher(sidorovy, "Nikolaevy", 3);
         travelAgency.chooseVoucherType(pietrovy, VoucherType.CRUISE);
         travelAgency.chooseTransport(pietrovy, TransportType.SHIP);
         travelAgency.addMeals(pietrovy, MealsType.BREAKFAST);
