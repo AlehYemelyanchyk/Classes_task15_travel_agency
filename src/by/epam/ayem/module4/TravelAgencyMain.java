@@ -10,11 +10,11 @@ import by.epam.ayem.module4.model.*;
 public class TravelAgencyMain {
 
     public static void main(String[] args) {
-        Voucher pietrovy = new Voucher("Pietrovy", 5);
-        Voucher sidorovy = new Voucher("Sidorovy", 2);
-
         TravelAgencyService travelAgency = new TravelAgencyService();
-        travelAgency.changeClientForVoucher(sidorovy, "Nikolaevy", 3);
+
+        Voucher pietrovy = travelAgency.createVoucherForClient("Peitrovy", 5);
+        Voucher sidorovy = travelAgency.createVoucherForClient("Peitrovy", 5);
+        travelAgency.createVoucherForClient("Sidorowy", 2);
         travelAgency.chooseVoucherType(pietrovy, VoucherType.CRUISE);
         travelAgency.chooseTransport(pietrovy, TransportType.SHIP);
         travelAgency.addMeals(pietrovy, MealsType.BREAKFAST);

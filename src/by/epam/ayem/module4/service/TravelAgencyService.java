@@ -12,10 +12,6 @@ public class TravelAgencyService {
         return new Voucher(surname, peopleAmount);
     }
 
-    public void changeClientForVoucher(Voucher voucher, String surname, int peopleAmount) {
-        voucher.setClient(new Client(surname, peopleAmount));
-    }
-
     public void chooseVoucherType(Voucher voucher, VoucherType voucherType) {
         voucher.setVoucherType(voucherType);
     }
